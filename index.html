@@ -6,97 +6,160 @@
     <title>Arraiá do Barbosa Ferraz</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1E90FF, #00BFFF, #4169E1);
+            font-family: 'Comic Sans MS', cursive;
+            background: linear-gradient(to bottom, #87CEEB, #1E90FF);
             margin: 0;
             padding: 0;
             min-height: 100vh;
         }
-        
+
+        /* Bandeirinhas no topo */
+        .bandeirinhas {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 40px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20"><polygon points="0,0 20,10 0,20" fill="%23FF0000"/><polygon points="0,0 20,10 0,20" fill="%23FFFF00" transform="translate(20,0)"/><polygon points="0,0 20,10 0,20" fill="%2300FF00" transform="translate(40,0)"/></svg>');
+            background-repeat: repeat-x;
+            animation: moveBandeirinhas 10s linear infinite;
+            z-index: 100;
+        }
+
+        @keyframes moveBandeirinhas {
+            0% { background-position: 0 0; }
+            100% { background-position: 60px 0; }
+        }
+
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 60px 20px 20px;
             position: relative;
         }
-        
+
         .header {
             text-align: center;
-            padding: 30px 0;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 3px dashed #FF8C00;
+            position: relative;
         }
-        
+
         .titulo-principal {
-            font-size: 4em;
-            color: #FFF;
-            text-shadow: 3px 3px 0 #000080, 5px 5px 10px rgba(0,0,0,0.3);
+            font-size: 3.5em;
+            color: #FF4500;
             margin: 0;
-            animation: pulse 2s infinite alternate;
+            text-shadow: 2px 2px 0 #FFD700;
         }
-        
+
         .logo-colegio {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             position: absolute;
-            top: 20px;
-            left: 20px;
-            border: 3px solid #FFF;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
             border-radius: 50%;
-            background-color: #FFF;
+            border: 3px solid #FF8C00;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            z-index: 10;
         }
-        
+
         .logo-colegio img {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 80%;
+            max-height: 80%;
         }
-        
+
         .informacoes {
             position: absolute;
-            top: 160px;
             left: 20px;
-            background: rgba(255,255,255,0.8);
-            padding: 20px;
+            top: 200px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
             border-radius: 10px;
             width: 250px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-left: 5px solid #FF8C00;
         }
-        
-        .imagem-central {
-            width: 500px;
-            height: 350px;
-            margin: 50px auto;
-            background-color: #FFF;
-            border-radius: 15px;
+
+        /* Elementos juninos */
+        .elementos-juninos {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            overflow: hidden;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
         }
-        
-        .imagem-central img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: cover;
+
+        .elemento {
+            width: 120px;
+            height: 120px;
+            margin: 10px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
         }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.05); }
+
+        .fogueira {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,85 Q50,20 70,85 Q50,60 20,85" fill="%23FF4500"/><path d="M35,80 Q50,40 65,80 Q50,65 35,80" fill="%23FF8C00"/><path d="M40,75 Q50,55 60,75 Q50,70 40,75" fill="%23FFD700"/></svg>');
+            animation: queimar 2s infinite alternate;
+        }
+
+        .milho {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><ellipse cx="50" cy="70" rx="30" ry="40" fill="%23FFEB3B"/><path d="M50,30 Q60,50 50,70 Q40,50 50,30" fill="%23FFC107"/></svg>');
+            animation: balancar 3s infinite ease-in-out;
+        }
+
+        .balao {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23FF5252"/><path d="M50,90 Q60,70 50,50 Q40,70 50,90" fill="%23FF5252"/></svg>');
+            animation: flutuar 4s infinite ease-in-out;
+        }
+
+        @keyframes queimar {
+            0% { transform: scale(1) rotate(-2deg); opacity: 0.9; }
+            100% { transform: scale(1.1) rotate(2deg); opacity: 1; }
+        }
+
+        @keyframes balancar {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        @keyframes flutuar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .informacoes {
+                position: relative;
+                width: auto;
+                margin: 20px;
+                top: auto;
+                left: auto;
+            }
+            
+            .titulo-principal {
+                font-size: 2.5em;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="bandeirinhas"></div>
+    
     <div class="container">
-        <div class="logo-colegio">
-            <!-- COLOQUE AQUI O LOGO DO SEU COLÉGIO -->
-            <img src="logo_colegio.png" alt="Logo do Colégio">
-        </div>
-        
         <div class="header">
+            <div class="logo-colegio">
+                <img src="logo_colegio.png" alt="Logo do Colégio">
+            </div>
             <h1 class="titulo-principal">ARRAIÁ DO BARBOSA FERRAZ</h1>
         </div>
         
@@ -107,9 +170,10 @@
             <p><strong>Escola:</strong> [Nome da Escola]</p>
         </div>
         
-        <div class="imagem-central">
-            <!-- COLOQUE AQUI SUA IMAGEM PREFERIDA -->
-            <img src="festa_junina.jpg" alt="Festa Junina">
+        <div class="elementos-juninos">
+            <div class="elemento fogueira"></div>
+            <div class="elemento milho"></div>
+            <div class="elemento balao"></div>
         </div>
     </div>
 </body>
