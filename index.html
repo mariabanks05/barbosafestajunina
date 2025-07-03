@@ -3,165 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minhas Informações - Festa Junina</title>
+    <title>Festa Junina Fofinha</title>
     <style>
-        /* ESTILOS ANIMADOS */
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: 'Comic Sans MS', cursive;
+            background: #87CEEB; /* Céu azul */
             margin: 0;
             padding: 0;
-            background-color: #1E90FF; /* Azul */
-            color: #FFD700; /* Dourado */
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="50" height="50" x="0" y="0" fill="%23005FBF" opacity="0.2"/><rect width="50" height="50" x="50" y="50" fill="%23005FBF" opacity="0.2"/></svg>');
             overflow-x: hidden;
         }
 
+        /* BANDEIRINHAS FOFAS */
         .bandeirinhas {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
-            height: 40px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20"><polygon points="0,0 20,10 0,20" fill="%23FF0000"/><polygon points="0,0 20,10 0,20" fill="%23FFFFFF" transform="translate(20,0)"/><polygon points="0,0 20,10 0,20" fill="%2300FF00" transform="translate(40,0)"/></svg>');
-            background-repeat: repeat-x;
-            z-index: 100;
-            animation: moveBandeirinhas 10s linear infinite;
+            height: 50px;
+            background: repeating-linear-gradient(
+                90deg,
+                #FF6B6B, #FFD166, #06D6A0, #118AB2, #073B4C,
+                #FF6B6B 20px /* Cores do arco-íris */
+            );
+            clip-path: polygon(
+                0% 0%, 2% 100%, 4% 0%, 6% 100%, 8% 0%,
+                10% 100%, 12% 0%, 14% 100%, 16% 0%, 18% 100%,
+                20% 0%, 22% 100%, 24% 0%, 26% 100%, 28% 0%,
+                30% 100%, 32% 0%, 34% 100%, 36% 0%, 38% 100%,
+                40% 0%, 42% 100%, 44% 0%, 46% 100%, 48% 0%,
+                50% 100%, 52% 0%, 54% 100%, 56% 0%, 58% 100%,
+                60% 0%, 62% 100%, 64% 0%, 66% 100%, 68% 0%,
+                70% 100%, 72% 0%, 74% 100%, 76% 0%, 78% 100%,
+                80% 0%, 82% 100%, 84% 0%, 86% 100%, 88% 0%,
+                90% 100%, 92% 0%, 94% 100%, 96% 0%, 98% 100%,
+                100% 0%
+            );
+            animation: balançar 3s ease-in-out infinite alternate;
         }
 
-        @keyframes moveBandeirinhas {
-            0% { background-position: 0 0; }
-            100% { background-position: 60px 0; }
+        @keyframes balançar {
+            0% { transform: rotate(-2deg); }
+            100% { transform: rotate(2deg); }
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 70px auto 20px;
-            padding: 20px;
-            position: relative;
-        }
-
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: rgba(0, 0, 139, 0.7);
-            color: #FFD700;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border: 3px dashed #FFD700;
-        }
-
-        .logo-colegio {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 15px;
-            background-color: #FFF;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 3px solid #FFD700;
-            box-shadow: 0 0 15px #FFD700;
-        }
-
-        .logo-colegio img {
-            max-width: 90%;
-            max-height: 90%;
-        }
-
+        /* FOGUEIRA FOFINHA */
         .fogueira {
-            width: 150px;
-            height: 150px;
-            margin: 20px auto;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,80 L50,20 L80,80 Z" fill="%23FF4500"/><path d="M30,70 L50,30 L70,70 Z" fill="%23FF8C00"/><path d="M35,60 L50,40 L65,60 Z" fill="%23FFD700"/><circle cx="50" cy="40" r="5" fill="%23FFFFFF"/></svg>');
-            background-repeat: no-repeat;
-            background-position: center;
-            animation: queimar 2s ease-in-out infinite alternate;
+            width: 120px;
+            height: 120px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,85 Q50,20 70,85 Q50,60 30,85" fill="%23FF9E5E"/><path d="M35,80 Q50,40 65,80 Q50,65 35,80" fill="%23FFCC5C"/><circle cx="50" cy="50" r="5" fill="%23FFF"/><circle cx="45" cy="45" r="2" fill="%23FFF" opacity="0.8"/><circle cx="55" cy="40" r="3" fill="%23FFF" opacity="0.6"/></svg>');
+            margin: 30px auto;
+            filter: drop-shadow(0 0 10px #FFA726);
+            animation: queimar 1.5s ease-in-out infinite alternate;
         }
 
         @keyframes queimar {
-            0% { transform: scale(1) rotate(-2deg); opacity: 0.9; }
-            100% { transform: scale(1.05) rotate(2deg); opacity: 1; }
+            0% { transform: scale(1) rotate(-1deg); opacity: 0.9; }
+            50% { filter: drop-shadow(0 0 15px #FF7043); }
+            100% { transform: scale(1.1) rotate(1deg); opacity: 1; }
         }
 
-        .info-card {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 25px;
-            border-radius: 15px;
-            margin: 20px 0;
-            border: 2px solid #FFD700;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        /* ELEMENTOS EXTRAS */
+        .milho {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><ellipse cx="50" cy="60" rx="30" ry="40" fill="%23FFEB3B"/><path d="M50,20 Q60,40 50,60 Q40,40 50,20" fill="%23FFC107"/></svg>');
+            animation: voar 10s linear infinite;
         }
 
-        .center-text {
-            text-align: center;
-            font-size: 2em;
-            color: #FFD700;
-            text-shadow: 2px 2px 4px #8B0000;
-            margin: 30px 0;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(to bottom, #0066CC, #004080);
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 50px;
-            margin: 15px 10px;
-            font-weight: bold;
-            border: 2px solid #FFD700;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s;
-        }
-
-        .btn:hover {
-            background: linear-gradient(to bottom, #004080, #0066CC);
-            transform: scale(1.05);
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            color: #FFD700;
+        @keyframes voar {
+            0% { transform: translateX(-50px) rotate(0deg); }
+            100% { transform: translateX(calc(100vw + 50px)) rotate(360deg); }
         }
     </style>
 </head>
 <body>
+    <!-- Bandeirinhas no topo -->
     <div class="bandeirinhas"></div>
-    
-    <div class="container">
-        <header>
-            <div class="logo-colegio">
-                <!-- COLOQUE AQUI O SÍMBOLO DO SEU COLÉGIO -->
-                <img src="seu_logo.png" alt="Símbolo do Colégio">
-            </div>
-            <h1>Festa Junina 2024</h1>
-        </header>
 
-        <div class="fogueira"></div>
+    <!-- Fogueira central -->
+    <div class="fogueira"></div>
 
-        <div class="info-card">
-            <h2>Minhas Informações</h2>
-            <p><strong>Nome:</strong> [Seu Nome]</p>
-            <p><strong>Série:</strong> [Sua Série]</p>
-            <p><strong>Escola:</strong> [Nome da Escola]</p>
-        </div>
+    <!-- Milhos voando -->
+    <div class="milho" style="top:20%; left:10%; animation-delay:0s;"></div>
+    <div class="milho" style="top:40%; left:5%; animation-delay:2s;"></div>
+    <div class="milho" style="top:70%; left:8%; animation-delay:4s;"></div>
 
-        <div class="center-text">
-            <h2>FESTA JUNINA</h2>
-            <p>A celebração da cultura caipira!</p>
-        </div>
-
-        <footer>
-            <a href="festajunina.html" class="btn">Conheça o Arraial de Barbosa Ferraz</a>
-        </footer>
+    <!-- Conteúdo principal -->
+    <div style="text-align:center; margin-top:100px;">
+        <h1 style="color:#FF5722; text-shadow: 2px 2px 0 #FFEB3B;">Festa Junina Fofinha!</h1>
+        <p style="font-size:1.2em; color:#5D4037;">✨ Tradição com um toque fofo ✨</p>
     </div>
 </body>
 </html>
