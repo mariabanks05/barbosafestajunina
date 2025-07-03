@@ -3,95 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Festa Junina Fofinha</title>
-    <style>
-        body {
-            font-family: 'Comic Sans MS', cursive;
-            background: #87CEEB; /* Céu azul */
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        /* BANDEIRINHAS FOFAS */
-        .bandeirinhas {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 50px;
-            background: repeating-linear-gradient(
-                90deg,
-                #FF6B6B, #FFD166, #06D6A0, #118AB2, #073B4C,
-                #FF6B6B 20px /* Cores do arco-íris */
-            );
-            clip-path: polygon(
-                0% 0%, 2% 100%, 4% 0%, 6% 100%, 8% 0%,
-                10% 100%, 12% 0%, 14% 100%, 16% 0%, 18% 100%,
-                20% 0%, 22% 100%, 24% 0%, 26% 100%, 28% 0%,
-                30% 100%, 32% 0%, 34% 100%, 36% 0%, 38% 100%,
-                40% 0%, 42% 100%, 44% 0%, 46% 100%, 48% 0%,
-                50% 100%, 52% 0%, 54% 100%, 56% 0%, 58% 100%,
-                60% 0%, 62% 100%, 64% 0%, 66% 100%, 68% 0%,
-                70% 100%, 72% 0%, 74% 100%, 76% 0%, 78% 100%,
-                80% 0%, 82% 100%, 84% 0%, 86% 100%, 88% 0%,
-                90% 100%, 92% 0%, 94% 100%, 96% 0%, 98% 100%,
-                100% 0%
-            );
-            animation: balançar 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes balançar {
-            0% { transform: rotate(-2deg); }
-            100% { transform: rotate(2deg); }
-        }
-
-        /* FOGUEIRA FOFINHA */
-        .fogueira {
-            width: 120px;
-            height: 120px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,85 Q50,20 70,85 Q50,60 30,85" fill="%23FF9E5E"/><path d="M35,80 Q50,40 65,80 Q50,65 35,80" fill="%23FFCC5C"/><circle cx="50" cy="50" r="5" fill="%23FFF"/><circle cx="45" cy="45" r="2" fill="%23FFF" opacity="0.8"/><circle cx="55" cy="40" r="3" fill="%23FFF" opacity="0.6"/></svg>');
-            margin: 30px auto;
-            filter: drop-shadow(0 0 10px #FFA726);
-            animation: queimar 1.5s ease-in-out infinite alternate;
-        }
-
-        @keyframes queimar {
-            0% { transform: scale(1) rotate(-1deg); opacity: 0.9; }
-            50% { filter: drop-shadow(0 0 15px #FF7043); }
-            100% { transform: scale(1.1) rotate(1deg); opacity: 1; }
-        }
-
-        /* ELEMENTOS EXTRAS */
-        .milho {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><ellipse cx="50" cy="60" rx="30" ry="40" fill="%23FFEB3B"/><path d="M50,20 Q60,40 50,60 Q40,40 50,20" fill="%23FFC107"/></svg>');
-            animation: voar 10s linear infinite;
-        }
-
-        @keyframes voar {
-            0% { transform: translateX(-50px) rotate(0deg); }
-            100% { transform: translateX(calc(100vw + 50px)) rotate(360deg); }
-        }
-    </style>
+    <title>Minhas Informações</title>
 </head>
 <body>
-    <!-- Bandeirinhas no topo -->
-    <div class="bandeirinhas"></div>
-
-    <!-- Fogueira central -->
-    <div class="fogueira"></div>
-
-    <!-- Milhos voando -->
-    <div class="milho" style="top:20%; left:10%; animation-delay:0s;"></div>
-    <div class="milho" style="top:40%; left:5%; animation-delay:2s;"></div>
-    <div class="milho" style="top:70%; left:8%; animation-delay:4s;"></div>
-
-    <!-- Conteúdo principal -->
-    <div style="text-align:center; margin-top:100px;">
-        <h1 style="color:#FF5722; text-shadow: 2px 2px 0 #FFEB3B;">Festa Junina Fofinha!</h1>
-        <p style="font-size:1.2em; color:#5D4037;">✨ Tradição com um toque fofo ✨</p>
+    <div style="text-align: center;">
+        <h1>Festa Junina</h1>
+    </div>
+    
+    <div style="position: relative; min-height: 400px;">
+        <!-- Informações no canto -->
+        <div style="position: absolute; left: 0; top: 0; padding: 20px; background: #f0f0f0;">
+            <h2>Minhas Informações</h2>
+            <p><strong>Nome:</strong> [Seu Nome]</p>
+            <p><strong>Série:</strong> [Sua Série]</p>
+            <p><strong>Escola:</strong> [Nome da Escola]</p>
+        </div>
+        
+        <!-- Texto central -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+            <h2 style="font-size: 3em;">FESTA JUNINA</h2>
+            <p>A celebração da cultura caipira!</p>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="arraial.html" style="display: inline-block; padding: 10px 20px; background: #e74c3c; color: white; text-decoration: none;">Conheça o Arraial de Barbosa Ferraz</a>
     </div>
 </body>
 </html>
