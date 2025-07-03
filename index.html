@@ -4,31 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minhas Informações</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Festa Junina</h1>
-        </header>
+    <div style="text-align: center;">
+        <h1>Festa Junina</h1>
+    </div>
+    
+    <div style="position: relative; min-height: 400px;">
+        <!-- Informações no canto -->
+        <div style="position: absolute; left: 0; top: 0; padding: 20px; background: #f0f0f0;">
+            <h2>Minhas Informações</h2>
+            <p><strong>Nome:</strong> [Seu Nome]</p>
+            <p><strong>Série:</strong> [Sua Série]</p>
+            <p><strong>Escola:</strong> [Nome da Escola]</p>
+        </div>
         
-        <main class="main-content">
-            <div class="info-card">
-                <h2>Minhas Informações</h2>
-                <p><strong>Nome:</strong> [Seu Nome]</p>
-                <p><strong>Série:</strong> [Sua Série]</p>
-                <p><strong>Escola:</strong> [Nome da Escola]</p>
-            </div>
-            
-            <div class="center-text">
-                <h2>FESTA JUNINA</h2>
-                <p>A celebração da cultura caipira!</p>
-            </div>
-        </main>
-        
-        <footer>
-            <a href="arraial.html" class="btn">Conheça o Arraial de Barbosa Ferraz</a>
-        </footer>
+        <!-- Texto central -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+            <h2 style="font-size: 3em;">FESTA JUNINA</h2>
+            <p>A celebração da cultura caipira!</p>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="arraial.html" style="display: inline-block; padding: 10px 20px; background: #e74c3c; color: white; text-decoration: none;">Conheça o Arraial de Barbosa Ferraz</a>
     </div>
 </body>
 </html>
