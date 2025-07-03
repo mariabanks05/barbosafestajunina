@@ -3,31 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minhas Informações</title>
+    <title>Arraiá do Barbosa Ferraz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #FFD700, #FF8C00, #FF4500);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .titulo-principal {
+            font-size: 4em;
+            color: #FFF;
+            text-shadow: 3px 3px 0 #8B0000, 5px 5px 10px rgba(0,0,0,0.3);
+            margin: 0;
+            animation: pulse 2s infinite alternate;
+        }
+        
+        .logo-colegio {
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            border: 3px solid #FFF;
+            border-radius: 50%;
+            background-color: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+        
+        .logo-colegio img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .informacoes {
+            position: absolute;
+            top: 160px;
+            left: 20px;
+            background: rgba(255,255,255,0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .imagem-central {
+            width: 500px;
+            height: 350px;
+            margin: 50px auto;
+            background-color: #FFF;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .imagem-central img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+    </style>
 </head>
-<body style="background-color: #E6F2FF;"> <!-- AZUL CLARO AQUI -->
-    <div style="text-align: center;">
-        <h1>Festa Junina</h1>
-    </div>
-    
-    <div style="position: relative; min-height: 400px;">
-        <!-- Informações no canto -->
-        <div style="position: absolute; left: 0; top: 0; padding: 20px; background: #f0f0f0;">
+<body>
+    <div class="container">
+        <div class="logo-colegio">
+            <!-- COLOQUE AQUI O LOGO DO SEU COLÉGIO -->
+            <img src="logo_colegio.png" alt="Logo do Colégio">
+        </div>
+        
+        <div class="header">
+            <h1 class="titulo-principal">ARRAIÁ DO BARBOSA FERRAZ</h1>
+        </div>
+        
+        <div class="informacoes">
             <h2>Minhas Informações</h2>
             <p><strong>Nome:</strong> [Seu Nome]</p>
             <p><strong>Série:</strong> [Sua Série]</p>
             <p><strong>Escola:</strong> [Nome da Escola]</p>
         </div>
         
-        <!-- Texto central -->
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-            <h2 style="font-size: 3em;">FESTA JUNINA</h2>
-            <p>A celebração da cultura caipira!</p>
+        <div class="imagem-central">
+            <!-- COLOQUE AQUI SUA IMAGEM PREFERIDA -->
+            <img src="festa_junina.jpg" alt="Festa Junina">
         </div>
-    </div>
-    
-    <div style="text-align: center; margin-top: 50px;">
-        <a href="festajunina.html" style="display: inline-block; padding: 10px 20px; background: #e74c3c; color: white; text-decoration: none;">Conheça o Arraial de Barbosa Ferraz</a>
     </div>
 </body>
 </html>
