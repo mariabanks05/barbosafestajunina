@@ -3,31 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minhas Informações</title>
+    <title>Minhas Informações - Festa Junina</title>
+    <style>
+        /* ESTILOS ANIMADOS */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1E90FF; /* Azul */
+            color: #FFD700; /* Dourado */
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="50" height="50" x="0" y="0" fill="%23005FBF" opacity="0.2"/><rect width="50" height="50" x="50" y="50" fill="%23005FBF" opacity="0.2"/></svg>');
+            overflow-x: hidden;
+        }
+
+        .bandeirinhas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20"><polygon points="0,0 20,10 0,20" fill="%23FF0000"/><polygon points="0,0 20,10 0,20" fill="%23FFFFFF" transform="translate(20,0)"/><polygon points="0,0 20,10 0,20" fill="%2300FF00" transform="translate(40,0)"/></svg>');
+            background-repeat: repeat-x;
+            z-index: 100;
+            animation: moveBandeirinhas 10s linear infinite;
+        }
+
+        @keyframes moveBandeirinhas {
+            0% { background-position: 0 0; }
+            100% { background-position: 60px 0; }
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 70px auto 20px;
+            padding: 20px;
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 139, 0.7);
+            color: #FFD700;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 3px dashed #FFD700;
+        }
+
+        .logo-colegio {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+            background-color: #FFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #FFD700;
+            box-shadow: 0 0 15px #FFD700;
+        }
+
+        .logo-colegio img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .fogueira {
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,80 L50,20 L80,80 Z" fill="%23FF4500"/><path d="M30,70 L50,30 L70,70 Z" fill="%23FF8C00"/><path d="M35,60 L50,40 L65,60 Z" fill="%23FFD700"/><circle cx="50" cy="40" r="5" fill="%23FFFFFF"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: queimar 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes queimar {
+            0% { transform: scale(1) rotate(-2deg); opacity: 0.9; }
+            100% { transform: scale(1.05) rotate(2deg); opacity: 1; }
+        }
+
+        .info-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 2px solid #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .center-text {
+            text-align: center;
+            font-size: 2em;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px #8B0000;
+            margin: 30px 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to bottom, #0066CC, #004080);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 15px 10px;
+            font-weight: bold;
+            border: 2px solid #FFD700;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to bottom, #004080, #0066CC);
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #FFD700;
+        }
+    </style>
 </head>
 <body>
-    <div style="text-align: center;">
-        <h1>Festa Junina</h1>
-    </div>
+    <div class="bandeirinhas"></div>
     
-    <div style="position: relative; min-height: 400px;">
-        <!-- Informações no canto -->
-        <div style="position: absolute; left: 0; top: 0; padding: 20px; background: #f0f0f0;">
+    <div class="container">
+        <header>
+            <div class="logo-colegio">
+                <!-- COLOQUE AQUI O SÍMBOLO DO SEU COLÉGIO -->
+                <img src="seu_logo.png" alt="Símbolo do Colégio">
+            </div>
+            <h1>Festa Junina 2024</h1>
+        </header>
+
+        <div class="fogueira"></div>
+
+        <div class="info-card">
             <h2>Minhas Informações</h2>
             <p><strong>Nome:</strong> [Seu Nome]</p>
             <p><strong>Série:</strong> [Sua Série]</p>
             <p><strong>Escola:</strong> [Nome da Escola]</p>
         </div>
-        
-        <!-- Texto central -->
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-                          <h2 style="font-size: 3em;">20º ARRAIA DO BARBOSA FERRAZ</h2>
-           <p style="font-size: 24px;">A celebração da cultura caipira!</p>
+
+        <div class="center-text">
+            <h2>FESTA JUNINA</h2>
+            <p>A celebração da cultura caipira!</p>
         </div>
-    </div>
-    
-    <div style="text-align: center; margin-top: 50px;">
-        <a href="festajunina.html" style="display: inline-block; padding: 10px 20px; background: #e74c3c; color: white; text-decoration: none;">Conheça o Arraial de Barbosa Ferraz</a>
+
+        <footer>
+            <a href="arraial.html" class="btn">Conheça o Arraial de Barbosa Ferraz</a>
+        </footer>
     </div>
 </body>
 </html>
