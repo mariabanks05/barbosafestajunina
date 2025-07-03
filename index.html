@@ -4,30 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minhas Informações</title>
+    <style>
+        /* Bandeirinhas animadas */
+        .bandeirinhas {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 30px;
+            background: repeating-linear-gradient(
+                90deg,
+                #FF5252, #FFEB3B, #4CAF50, #2196F3, #9C27B0,
+                #FF5252 20px
+            );
+            clip-path: polygon(
+                0% 0%, 2% 100%, 4% 0%, 6% 100%, 8% 0%,
+                10% 100%, 12% 0%, 14% 100%, 16% 0%, 18% 100%,
+                20% 0%
+            );
+            z-index: 100;
+        }
+    </style>
 </head>
-<body>
-    <div style="text-align: center;">
-        <h1>Festa Junina</h1>
+<body style="background: #E6F2FF; font-family: 'Comic Sans MS', cursive; margin: 0; padding: 0;">
+    
+    <!-- Bandeirinhas no topo -->
+    <div class="bandeirinhas"></div>
+    
+    <div style="text-align: center; padding-top: 40px;">
+        <h1 style="color: #FF5722; text-shadow: 2px 2px 0 #FFF;">Festa Junina</h1>
     </div>
     
     <div style="position: relative; min-height: 400px;">
         <!-- Informações no canto -->
-        <div style="position: absolute; left: 0; top: 0; padding: 20px; background: #f0f0f0;">
-            <h2>Minhas Informações</h2>
+        <div style="position: absolute; left: 20px; top: 20px; padding: 20px; background: rgba(255,255,255,0.9); border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-left: 5px solid #FF9800;">
+            <h2 style="color: #FF5722; margin-top: 0;">Minhas Informações</h2>
             <p><strong>Nome:</strong> [Seu Nome]</p>
             <p><strong>Série:</strong> [Sua Série]</p>
             <p><strong>Escola:</strong> [Nome da Escola]</p>
         </div>
         
         <!-- Texto central -->
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-            <h2 style="font-size: 3em;">FESTA JUNINA</h2>
-            <p>A celebração da cultura caipira!</p>
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; background: rgba(255,255,255,0.7); padding: 30px; border-radius: 15px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+            <h2 style="font-size: 3em; color: #E91E63; margin: 0; text-shadow: 3px 3px 0 #FFEB3B;">FESTA JUNINA</h2>
+            <p style="font-size: 1.5em; color: #5D4037;">A celebração da cultura caipira!</p>
+            
+            <!-- Fogueira fofinha -->
+            <div style="width: 80px; height: 80px; margin: 20px auto; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,80 Q50,30 70,80 Q50,60 30,80" fill="%23FFA000"/><path d="M35,75 Q50,45 65,75 Q50,65 35,75" fill="%23FFC107"/></svg>'); animation: pulse 1.5s infinite alternate;"></div>
         </div>
     </div>
     
-    <div style="text-align: center; margin-top: 50px;">
-        <a href="festajunina.html" style="display: inline-block; padding: 10px 20px; background: #e74c3c; color: white; text-decoration: none;">Conheça o Arraial de Barbosa Ferraz</a>
+    <div style="text-align: center; margin: 50px 0;">
+        <a href="arraial.html" style="display: inline-block; padding: 12px 25px; background: linear-gradient(to bottom, #FF5722, #E91E63); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; box-shadow: 0 5px 15px rgba(233,30,99,0.4); border: 2px solid #FFEB3B; transition: all 0.3s;">
+            Conheça o Arraial de Barbosa Ferraz
+        </a>
     </div>
+
+    <style>
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.1); opacity: 1; }
+        }
+        
+        /* Milhos voando */
+        .milho {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><ellipse cx="50" cy="60" rx="25" ry="35" fill="%23FFEB3B"/><path d="M50,25 Q55,40 50,60 Q45,40 50,25" fill="%23FFC107"/></svg>');
+            animation: voar 15s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes voar {
+            0% { transform: translateX(-50px) rotate(0deg); }
+            100% { transform: translateX(calc(100vw + 50px)) rotate(360deg); }
+        }
+    </style>
+    
+    <!-- Milhos animados -->
+    <div class="milho" style="top:30%; left:5%;"></div>
+    <div class="milho" style="top:60%; left:10%; animation-delay:3s;"></div>
+    <div class="milho" style="top:20%; left:8%; animation-delay:5s;"></div>
 </body>
 </html>
+            
